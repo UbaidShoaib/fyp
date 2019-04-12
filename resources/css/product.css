@@ -1,0 +1,80 @@
+a:link {
+  color: #0099cc;
+
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+#product-list li:hover{
+  background-color: red;
+
+
+}
+#product-list li a {
+display: block;
+
+
+}
+#product-list li:hover a{
+  background-color: red;
+  color: white;
+}
+
+#dropdownButton{
+  float: right;
+}
+/* #product-list{
+border-style: round;
+} */
+  /* #box-shadow {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  } */
+  .fullCard {
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 5px;
+    padding: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  .mega-menu {
+  	padding: 10px 0px ! important;
+  	width: 540px;
+    border-radius: 0;
+    margin-top: 0px;
+  	}
+  /* mega manue style */
+  	.mega-menu li {
+  		display: inline-block;
+  		float: left;
+  		font-size: 0.94rem;
+  		padding: 3px 0px;
+  		}
+
+  		.mega-menu li.mega-menu-column {
+  			margin-right: 20px;
+  			width: 150px;
+  			}
+
+  			.mega-menu .nav-header {
+  			padding: 0 !important;
+  			margin-bottom: 10px;
+  			display: inline-block;
+  			width: 100%;
+  			border-bottom: 1px solid #ddd;
+  			}
+
+/*  verticle line*/
+
+        .pk{
+           height: 50px;
+           border-color: green;
+           border-style: solid;
+           border-width: 0px 0px 0px 2px;
+       }
+#row-section a:link{
+  color: blue;
+}
