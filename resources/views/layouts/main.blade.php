@@ -18,6 +18,9 @@
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Core Stylesheet -->
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
     <link href="{{asset('css/color.css')}}" rel="stylesheet">
@@ -47,8 +50,32 @@
                         <div class="login-search-area d-flex align-items-center">
                             <!-- Login -->
                             <div class="login d-flex">
-                                <a href="#">Login</a>
-                                <a href="#">Register</a>
+                                @guest
+                                <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                                @if (Route::has('register'))
+                                <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                                @endif
+                                @else
+                                    <ul>
+                                    <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                        </a>
+
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" style="color: #0b0b0b">
+                                                {{ __('Logout') }}
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                    </ul>
+                                    @endguest
                             </div>
                             <!-- Search Form -->
                             <div class="search-form">

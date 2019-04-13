@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('homepage');
+Route::get('/landing', function () {
+    return view('landing');
 });
 
 Route::get('/specific', function () {
@@ -73,3 +73,6 @@ Route::get('/request-for-review',function(){
 Route::get('/login-register',function(){
     return view('general/login-register');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
