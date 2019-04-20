@@ -202,9 +202,13 @@
                                 <li><a href="journals.html">Journals</a></li>
                                 <li><a href="#">About</a></li>
                                 <li><a href="#">Careers</a></li>
-                                <li><a href="#">Technology</a></li>
 
-                                <li><a href="contact.html">Contact</a></li>
+                                @if(\Illuminate\Support\Facades\Auth::check())
+                                <li><a href="{{route('author.index')}}">Author Dashboard</a></li>
+                                    <li><a href="{{route('reviewer.index')}}">Reviewer Dashboard</a></li>
+                                @endif
+
+
                             </ul>
                         </div>
                         <!-- Nav End -->

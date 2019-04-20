@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\App;
 
 class User extends Authenticatable
 {
@@ -36,4 +37,44 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+    public function author(){
+
+        return $this->hasOne('App\Author');
+    }
+
+    public function reviewer(){
+
+        return $this->hasOne('App\Reviewer');
+    }
+
+    public function isAuthor(){
+
+        if ($this->author){
+
+            return true;
+        }else
+        {
+            return false;
+        }
+    }
+
+
+
+    public function isRev(){
+
+        if ($this->reviewer){
+
+            return true;
+        }else
+        {
+            return false;
+        }
+    }
+
+
+
+
 }
